@@ -11,13 +11,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-
+/*
+    个人中心
+ */
 @Controller
 public class ProfileController {
 
     @Autowired
     private QuestionService questionService;
 
+    //个人中心——我的问题
+    //个人中心——最新回复
     @GetMapping("/profile/{action}")
     public String profile(HttpServletRequest request,
                           @PathVariable(name = "action") String action,

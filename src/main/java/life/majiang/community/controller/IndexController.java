@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+/*
+    首页页码配置
+ */
 @Controller
 public class IndexController {
 
@@ -15,6 +17,8 @@ public class IndexController {
     @Autowired
     private QuestionService questionService;
 
+    //page 页数
+    //size 一页几个问题
     @GetMapping("/")
     public String index(Model model,
                         @RequestParam(name = "page",defaultValue = "1") Integer page,
