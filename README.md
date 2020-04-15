@@ -9,4 +9,7 @@
 [Thymeleaf](https://www.thymeleaf.org/doc/articles/thymeleaf3migration.html)
 ## 工具
 [Git](https://git-scm.com/download)  
-[Visual Paradigm](https://www.visual-paradigm.com)
+[Visual Paradigm](https://www.visual-paradigm.com)  
+[Postman]()
+## 脚本
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate

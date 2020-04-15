@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collections;
 import java.util.Map;
-
+/*
+    异常页面
+ */
 @Controller
 @RequestMapping({"${server.error.path:${error.path:/error}}"})
 public class CustomizeErrorController implements ErrorController {
