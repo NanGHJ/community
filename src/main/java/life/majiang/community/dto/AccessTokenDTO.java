@@ -2,6 +2,9 @@ package life.majiang.community.dto;
 
 import lombok.Data;
 
+/*
+    登录状态对象
+ */
 @Data
 public class AccessTokenDTO {
     private String client_id;

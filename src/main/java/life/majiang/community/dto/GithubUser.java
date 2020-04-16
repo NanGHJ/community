@@ -2,6 +2,9 @@ package life.majiang.community.dto;
 
 import lombok.Data;
 
+/*
+    Github对象
+ */
 @Data
 public class GithubUser {
     private String name;
