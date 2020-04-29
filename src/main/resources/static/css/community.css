@@ -35,6 +35,18 @@ body {
     margin-top: 25px;
 }
 
+.question-tag {
+    margin-right: 5px;
+}
+
+.question-related {
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 0px;
+    list-style: none;
+    padding-left: 0px;
+}
+
 .community-menu {
     display: block;
     color: #999;
@@ -67,7 +79,8 @@ body {
     padding-top: 15px;
     margin-bottom: 15px;
 }
-.sub-comments .btn{
+
+.sub-comments .btn {
     margin: 10px 0;
 }
 
