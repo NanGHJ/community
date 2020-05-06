@@ -68,40 +68,40 @@ function collapseComments(e) {
         e.removeAttribute("data-collapse");
         e.classList.remove("active");
     } else {
-        var subCommentContainer = $("#comment-"+id);
+        var subCommentContainer = $("#comment-" + id);
 
-        if(subCommentContainer.children().length != 1){
+        if (subCommentContainer.children().length != 1) {
             //展开二级评论
             comments.addClass("in");
             //标记二级评论展开状态
             e.setAttribute("data-collapse", "in");
             e.classList.add("active");
-        }else{
-            $.getJSON("/comment/" + id,function (data) {
+        } else {
+            $.getJSON("/comment/" + id, function (data) {
                 $.each(data.data.reverse(), function (index, comment) {
-                    var mediaLeftElement = $("<div/>",{
-                        "class":"media-left"
+                    var mediaLeftElement = $("<div/>", {
+                        "class": "media-left"
                     }).append($("<img/>", {
                         "class": "media-object img-rounded",
                         "src": comment.user.avatarUrl
                     }));
 
-                    var mediaBodyElement = $("<div/>",{
-                        "class":"media-body"
-                    }).append($("<h5/>",{
-                        "class":"media-heading",
-                        "html":comment.user.name
-                    })).append($("<div/>",{
-                        "html":comment.content
-                    })).append($("<div/>",{
-                        "class":"menu"
-                    }).append($("<span/>",{
-                        "class":"pull-right",
-                        html:moment(comment.gmtCreate).format('YYYY-MM-DD')
+                    var mediaBodyElement = $("<div/>", {
+                        "class": "media-body"
+                    }).append($("<h5/>", {
+                        "class": "media-heading",
+                        "html": comment.user.name
+                    })).append($("<div/>", {
+                        "html": comment.content
+                    })).append($("<div/>", {
+                        "class": "menu"
+                    }).append($("<span/>", {
+                        "class": "pull-right",
+                        html: moment(comment.gmtCreate).format('YYYY-MM-DD')
                     })));
 
-                    var mediaElement = $("<div/>",{
-                        "class":"media"
+                    var mediaElement = $("<div/>", {
+                        "class": "media"
                     }).append(mediaLeftElement)
                         .append(mediaBodyElement);
 
@@ -119,4 +119,21 @@ function collapseComments(e) {
             });
         }
     }
+}
+
+function showSelectTag() {
+    $("#select-tag").show();
+}
+
+function selectTag(e) {
+    var value = e.getAttribute("data-tag");
+    var previous = $("#tag").val();
+    if(previous.indexOf(value) == -1){
+        if (previous) {
+            $("#tag").val(previous + ',' + value);
+        } else {
+            $("#tag").val(value);
+        }
+    }
+
 }
