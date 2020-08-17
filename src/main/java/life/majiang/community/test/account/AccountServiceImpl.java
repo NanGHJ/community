@@ -13,8 +13,9 @@ package life.majiang.community.test.account;
  * @since JDK1.7
  * @history 2020/8/13 程碧泉 新建
  */
-public class AccountServiceImpl {
+public class AccountServiceImpl implements AccountService{
     //转账  收参
+    @Override
     public void transfer(String fromNo,String pwd,String toNo,double money){
         AccountDaoImpl accountDao = new AccountDaoImpl();
         //2.组织完善业务功能

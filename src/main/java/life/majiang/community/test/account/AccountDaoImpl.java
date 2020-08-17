@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * TODO
@@ -18,14 +19,13 @@ import java.sql.SQLException;
  * @since JDK1.7
  * @history 2020/8/13 程碧泉 新建
  */
-public class AccountDaoImpl {
+public class AccountDaoImpl implements AccountDao{
+    @Override
     public int insert(Account account){
         return 0;
     }
-    public int delete(int cardNo){
-        return 0;
-    }
     //修改
+    @Override
     public int update(Account account){
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -46,7 +46,13 @@ public class AccountDaoImpl {
         }
         return 0;
     }
+
+    @Override
+    public int delete(String cardNo) {
+        return 0;
+    }
     //查询
+    @Override
     public Account select(String cardNo){
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -73,4 +79,10 @@ public class AccountDaoImpl {
         }
         return null;
     }
+
+    @Override
+    public List<Account> selectAll() {
+        return null;
+    }
+
 }
